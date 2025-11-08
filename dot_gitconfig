@@ -1,0 +1,11 @@
+[user]
+  email = miha@lepko.net
+  name = LepkoQQ
+[core]
+  autocrlf = input
+[gc]
+  autoDetach = false
+[pull]
+  rebase = true
+[init]
+  defaultBranch = main

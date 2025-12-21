@@ -12,7 +12,18 @@ source /usr/share/cachyos-zsh-config/cachyos-config.zsh
 
 # to move dotfiles first and have case-insensitive sorting see this: https://unix.stackexchange.com/a/361006
 alias ll="ls -lahF --group-directories-first"
+alias dc="docker-compose"
+alias gurl="git remote -v | awk '\$3 == \"(fetch)\" {print \$2}' | sed -e 's/git\@github\.com\:/https\:\/\/github.com\//' -e 's/\.git$//'"
 
+# open code in current dir or open workspace file if it exists
+function cod {
+  WORKSPACEFILE=$(find . -maxdepth 1 -name "*.code-workspace" | head -n 1)
+  if [ -z "$WORKSPACEFILE" ]; then
+    code .
+  else
+    code "$WORKSPACEFILE"
+  fi
+}
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

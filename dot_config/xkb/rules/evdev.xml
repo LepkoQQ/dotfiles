@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xkbConfigRegistry SYSTEM "xkb.dtd">
+<xkbConfigRegistry version="1.1">
+  <layoutList>
+    <layout>
+      <configItem>
+        <name>si</name>
+      </configItem>
+      <variantList>
+        <variant>
+          <configItem>
+            <name>winlike</name>
+            <description>Slovenian (Windows-like)</description>
+          </configItem>
+        </variant>
+      </variantList>
+    </layout>
+  </layoutList>
+</xkbConfigRegistry>

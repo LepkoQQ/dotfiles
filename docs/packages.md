@@ -11,7 +11,8 @@ sudo dnf install \
   ripgrep \
   chezmoi \
   kubernetes1.35 \
-  k9s
+  k9s \
+  postgresql16
 ```
 
 From third-party repos (google them)

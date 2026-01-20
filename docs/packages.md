@@ -14,7 +14,8 @@ sudo dnf install \
   chezmoi \
   kubernetes1.35 \
   k9s \
-  postgresql16
+  postgresql16 \
+  libpq-devel
 ```
 
 From third-party repos (google them)
@@ -37,5 +38,23 @@ dnf list --installed
 Development packages recommended by **pyenv**
 
 ```sh
-dnf install make gcc patch zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel tk-devel libffi-devel xz-devel libuuid-devel gdbm-libs libnsl2
+sudo dnf install make gcc patch zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel tk-devel libffi-devel xz-devel libuuid-devel gdbm-libs libnsl2
+```
+
+Install **pyenv**
+
+```sh
+curl -fsSL https://pyenv.run | bash
+```
+
+Install **virtualenv** and **pip**
+
+```sh
+sudo dnf install python3-virtualenv python3-pip
+```
+
+Install **virtualenvwrapper**
+
+```sh
+sudo pip install virtualenvwrapper
 ```

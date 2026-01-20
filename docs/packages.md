@@ -15,7 +15,8 @@ sudo dnf install \
   kubernetes1.35 \
   k9s \
   postgresql16 \
-  libpq-devel
+  libpq-devel \
+  libmemcached-awesome-devel
 ```
 
 From third-party repos (google them)
@@ -34,6 +35,12 @@ dnf list --installed
 ```
 
 ### Other lists
+
+Development packages
+
+```sh
+sudo dnf install make automake gcc gcc-c++
+```
 
 Development packages recommended by **pyenv**
 

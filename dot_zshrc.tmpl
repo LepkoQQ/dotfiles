@@ -30,7 +30,7 @@ bindkey "$terminfo[kcud1]" history-substring-search-down
 # user environment variables
 export PROMPT_COMMAND="history -a; $PROMPT_COMMAND" # append to history after each command (multiple shells will share history)
 export EDITOR="nano"
-export SCW_SECRET_TOKEN="<TODO>"
+export SCW_SECRET_TOKEN="{{ protonPass "pass://Work - DJND/scaleway api key/password" | trim }}"
 
 # user aliases
 alias ll="ls -lahF --group-directories-first" # to move dotfiles first and have case-insensitive sorting see this: https://unix.stackexchange.com/a/361006

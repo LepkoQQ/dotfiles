@@ -1,0 +1,9 @@
+set constantshow
+set mouse
+set softwrap
+set autoindent
+#set guidestripe 72
+set linenumbers
+set smarthome
+set tabsize 4
+set tabstospaces

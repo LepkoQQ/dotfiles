@@ -1,3 +1,8 @@
+# add user local bin directory to path
+if ! [[ "$PATH" =~ "$HOME/.local/bin:" ]]; then
+  [[ -d "$HOME/.local/bin" ]] && export PATH="$HOME/.local/bin:$PATH"
+fi
+
 {{ if eq .chezmoi.osRelease.id "cachyos" }}
 source /usr/share/cachyos-zsh-config/cachyos-config.zsh
 {{ else }}

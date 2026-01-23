@@ -16,7 +16,9 @@ sudo dnf install \
   k9s \
   postgresql16 \
   libpq-devel \
-  libmemcached-awesome-devel
+  libmemcached-awesome-devel \
+  jq \
+  inkscape
 ```
 
 From third-party repos (google them)
@@ -65,3 +67,11 @@ Install **virtualenvwrapper**
 ```sh
 sudo pip install virtualenvwrapper
 ```
+
+### Other packages
+
+- nvm
+  - [installation](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating)
+  - you dont need shell config in .zshrc if you have the nvm plugin enabled
+- pass-cli (Proton Pass)
+  - [installation](https://protonpass.github.io/pass-cli/get-started/installation/#quick-install)

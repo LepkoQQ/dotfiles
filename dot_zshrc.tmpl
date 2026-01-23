@@ -4,6 +4,13 @@ if ! [[ "$PATH" =~ "$HOME/.local/bin:" ]]; then
 fi
 
 {{ if eq .chezmoi.osRelease.id "cachyos" }}
+plugins=(
+  ssh-agent
+  git
+  fzf
+  extract
+  nvm
+)
 source /usr/share/cachyos-zsh-config/cachyos-config.zsh
 {{ else }}
 # oh-my-zsh configuration

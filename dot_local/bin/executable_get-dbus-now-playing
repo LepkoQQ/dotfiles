@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+PLAYERS=$(
+  dbus-send --print-reply --dest=org.freedesktop.DBus /org/freedesktop/DBus org.freedesktop.DBus.ListNames \
+    | awk -F '"' 'BEGIN {RS=" string "} /org\.mpris\.MediaPlayer2/ {print $2}'
+)
+
+for PLAYER in $PLAYERS; do
+  # echo -e "Service: $PLAYER\n"
+
+  STATUS=$(
+    dbus-send --type=method_call --print-reply --dest=$PLAYER /org/mpris/MediaPlayer2 \
+      org.freedesktop.DBus.Properties.Get string:'org.mpris.MediaPlayer2.Player' string:'PlaybackStatus' \
+      | awk -F '"' '/string/ {print $2}'
+  )
+  # echo "Status: $STATUS"
+
+  if [ "$STATUS" == "Playing" ]; then
+    METADATA=$(
+      dbus-send --type=method_call --print-reply --dest=$PLAYER /org/mpris/MediaPlayer2 \
+        org.freedesktop.DBus.Properties.Get string:'org.mpris.MediaPlayer2.Player' string:'Metadata'
+    )
+    ARTIST=$(echo "$METADATA" | awk -F '"' 'BEGIN {RS=" dict entry"} /"xesam:artist"/ {print $4}')
+    # ALBUM=$(echo "$METADATA" | awk -F '"' 'BEGIN {RS=" dict entry"} /"xesam:album"/ {print $4}')
+    TITLE=$(echo "$METADATA" | awk -F '"' 'BEGIN {RS=" dict entry"} /"xesam:title"/ {print $4}')
+    # echo "Artist: $ARTIST"
+    # echo "Album:  $ALBUM"
+    # echo "Title:  $TITLE"
+
+    if [ -n "$ARTIST" ] && [ -n "$TITLE" ]; then
+      echo "$ARTIST - $TITLE"
+      break
+    elif [ -n "$TITLE" ]; then
+      echo "$TITLE"
+      break
+    fi
+  fi
+done

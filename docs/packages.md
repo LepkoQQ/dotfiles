@@ -18,7 +18,8 @@ sudo dnf install \
   libpq-devel \
   libmemcached-awesome-devel \
   jq \
-  inkscape
+  inkscape \
+  awscli2
 ```
 
 From third-party repos (google them)

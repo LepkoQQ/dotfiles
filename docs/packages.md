@@ -19,7 +19,10 @@ sudo dnf install \
   libmemcached-awesome-devel \
   jq \
   inkscape \
-  awscli2
+  chromium \
+  awscli2 \
+  gimp \
+  sqlitebrowser
 ```
 
 From third-party repos (google them)
@@ -76,3 +79,11 @@ sudo pip install virtualenvwrapper
   - you dont need shell config in .zshrc if you have the nvm plugin enabled
 - pass-cli (Proton Pass)
   - [installation](https://protonpass.github.io/pass-cli/get-started/installation/#quick-install)
+
+### Asus specific packages
+
+- asusctl
+  - battery charge limit is reset to 100% on boot by default
+  - use `asusctl` to set it and `asusd` service will remember it
+  - [installation](https://asus-linux.org/guides/fedora-guide/)
+  - [documentation](https://wiki.archlinux.org/title/Asusctl#Charge_limit)

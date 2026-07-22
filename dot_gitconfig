@@ -3,6 +3,7 @@
   name = LepkoQQ
 [core]
   autocrlf = input
+  pager = less -FRX
 [gc]
   autoDetach = false
 [pull]
